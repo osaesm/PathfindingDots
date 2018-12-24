@@ -14,8 +14,8 @@ class Dot:
         self.num_moves += 1
 
     # calculate fitness score
-    def set_score(self, goal_pos):
-        if np.linalg.norm(self.pos - goal_pos) < 1:
+    def set_score(self, goal_pos, movement_size):
+        if np.linalg.norm(self.pos - goal_pos) < movement_size:
             self.score = 10 + 1/(self.num_moves*self.num_moves)
         else:
             self.score = 1/np.linalg.norm(self.pos-goal_pos)

@@ -22,7 +22,6 @@ test_gen = Generation(starting_pos, goal_pos, generation_size, vector_length, nu
 while test_gen.do_moves(boundaries) is None:
     for dot in test_gen.prev_bests[1:]:
         point = Circle(Point(dot.pos[0], dot.pos[1]), 5)
-        # point.setOutline('red')
         point.setFill('black')
         point.draw(win)
     point = Circle(Point(test_gen.prev_bests[0].pos[0], test_gen.prev_bests[0].pos[1]), 5)

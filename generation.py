@@ -35,6 +35,6 @@ class Generation:
                 return self.dots[i].num_moves
             if 0 <= self.dots[i].pos[0] <= x_bound and 0 <= self.dots[i].pos[1] <= y_bound:
                 self.dots[i].move(np.random.randn(2), self.movement_size)
-                self.dots[i].set_score(self.goal_pos)
+                self.dots[i].set_score(self.goal_pos, self.movement_size)
         self.dots.sort(reverse=True, key=self.dot_score)
         self.prev_bests = self.dots[:self.best_num]
