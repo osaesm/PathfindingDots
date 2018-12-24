@@ -3,7 +3,6 @@ import numpy as np
 class Dot:
     def __init__(self, x_pos=0, y_pos=0):
         self.pos = np.array([float(x_pos), float(y_pos)])
-        self.all_v = []
         self.last_v = np.array([0.0, 0.0])
         self.score = 0
         self.num_moves = 0
@@ -12,7 +11,6 @@ class Dot:
     def move(self, v, movement_size):
         self.last_v = v/np.linalg.norm(v) * movement_size
         self.pos += self.last_v
-        self.all_v.append(self.last_v)
         self.num_moves += 1
 
     # calculate fitness score
